@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from .models import CarInfo
 
 def signup(request):
     if request.method == 'POST':
@@ -43,3 +44,18 @@ def customer(request):
 
 def manager(request):
     return render(request, 'accounts/manager.html')
+
+def browser(request):
+    return render(request, 'accounts/browser.html')
+
+def record(request):
+    return render(request, 'accounts/record.html')
+
+def history(request):
+    return render(request, 'accounts/history.html')
+
+
+def test(request):
+    items = CarInfo.objects.all()
+    return render(request, 'accounts/test.html',{'items':items})
+# return render(request, 'accounts/test.html')

@@ -7,5 +7,4 @@ urlpatterns = [
     path('',views.home, name='home'),
     path('accounts/', include('accounts.url')),
     path('products/', include('products.url')),
-
 ]

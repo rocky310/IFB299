@@ -7,6 +7,7 @@ def home(request):
     products = Product.objects
     return render(request, 'products/home.html',{'products':products})
 
+
 @login_required(login_url="/accounts/signup")
 def create(request):
     if request.method == 'POST':
@@ -28,3 +29,4 @@ def create(request):
             return render(request, 'products/create.html',{'error':'All fields are required.'})
     else:
         return render(request, 'products/create.html')
+
