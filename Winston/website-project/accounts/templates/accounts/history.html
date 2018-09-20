@@ -61,326 +61,127 @@
 
       </div>
     </nav>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   </header>
 
-  <div class="container">
+<body>
 
-    {% block content %}
-    {% endblock %}
-
-  </div>
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script>
-    $(document).ready(function() {
-    $('table.display').DataTable();
-    } );
-</script>
-
-
-
-<table id="" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Order CreateDate</th>
-                <th>Pickup Store Name</th>
-                <th>Order ReturnDate</th>
-                <th>Return Store Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>$433,060</td>
-            </tr>
-            <tr>
-                <td>Sonya Frost</td>
-                <td>Software Engineer</td>
-                <td>Edinburgh</td>
-                <td>23</td>
-                <td>$103,600</td>
-            </tr>
-            <tr>
-                <td>Quinn Flynn</td>
-                <td>Support Lead</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>$342,000</td>
-            </tr>
-            <tr>
-                <td>Dai Rios</td>
-                <td>Personnel Lead</td>
-                <td>Edinburgh</td>
-                <td>35</td>
-                <td>$217,500</td>
-            </tr>
-            <tr>
-                <td>Gavin Joyce</td>
-                <td>Developer</td>
-                <td>Edinburgh</td>
-                <td>42</td>
-                <td>$92,575</td>
-            </tr>
-            <tr>
-                <td>Martena Mccray</td>
-                <td>Post-Sales support</td>
-                <td>Edinburgh</td>
-                <td>46</td>
-                <td>$324,050</td>
-            </tr>
-            <tr>
-                <td>Jennifer Acosta</td>
-                <td>Junior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>43</td>
-                <td>$75,650</td>
-            </tr>
-            <tr>
-                <td>Shad Decker</td>
-                <td>Regional Director</td>
-                <td>Edinburgh</td>
-                <td>51</td>
-                <td>$183,000</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Order ID</th>
-                <th>Order CreateDate</th>
-                <th>Pickup Store Name</th>
-                <th>Order ReturnDate</th>
-                <th>Return Store Name</th>
-            </tr>
-        </tfoot>
-    </table><table id="" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>Customer ID</th>
-                <th>Customer Name</th>
-                <th>Customer Phone</th>
-                <th>Customer Addresss</th>
-                <th>Customer Brithday</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Jena Gaines</td>
-                <td>Office Manager</td>
-                <td>London</td>
-                <td>30</td>
-                <td>$90,560</td>
-            </tr>
-            <tr>
-                <td>Haley Kennedy</td>
-                <td>Senior Marketing Designer</td>
-                <td>London</td>
-                <td>43</td>
-                <td>$313,500</td>
-            </tr>
-            <tr>
-                <td>Tatyana Fitzpatrick</td>
-                <td>Regional Director</td>
-                <td>London</td>
-                <td>19</td>
-                <td>$385,750</td>
-            </tr>
-            <tr>
-                <td>Michael Silva</td>
-                <td>Marketing Designer</td>
-                <td>London</td>
-                <td>66</td>
-                <td>$198,500</td>
-            </tr>
-            <tr>
-                <td>Bradley Greer</td>
-                <td>Software Engineer</td>
-                <td>London</td>
-                <td>41</td>
-                <td>$132,000</td>
-            </tr>
-            <tr>
-                <td>Angelica Ramos</td>
-                <td>Chief Executive Officer (CEO)</td>
-                <td>London</td>
-                <td>47</td>
-                <td>$1,200,000</td>
-            </tr>
-            <tr>
-                <td>Suki Burks</td>
-                <td>Developer</td>
-                <td>London</td>
-                <td>53</td>
-                <td>$114,500</td>
-            </tr>
-            <tr>
-                <td>Prescott Bartlett</td>
-                <td>Technical Author</td>
-                <td>London</td>
-                <td>27</td>
-                <td>$145,000</td>
-            </tr>
-            <tr>
-                <td>Timothy Mooney</td>
-                <td>Office Manager</td>
-                <td>London</td>
-                <td>37</td>
-                <td>$136,200</td>
-            </tr>
-            <tr>
-                <td>Bruno Nash</td>
-                <td>Software Engineer</td>
-                <td>London</td>
-                <td>38</td>
-                <td>$163,500</td>
-            </tr>
-            <tr>
-                <td>Hermione Butler</td>
-                <td>Regional Director</td>
-                <td>London</td>
-                <td>47</td>
-                <td>$356,250</td>
-            </tr>
-            <tr>
-                <td>Lael Greer</td>
-                <td>Systems Administrator</td>
-                <td>London</td>
-                <td>21</td>
-                <td>$103,500</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Customer ID</th>
-                <th>Customer Name</th>
-                <th>Customer Phone</th>
-                <th>Customer Addresss</th>
-                <th>Customer Brithday</th>
-            </tr>
-        </tfoot>
-    </table><table id="" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>Car ID</th>
-                <th>Car MakeName</th>
-                <th>Car SeriesYear</th>
-                <th>Car EngineSize</th>
-                <th>Car SeatingCapacity</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Jena Gaines</td>
-                <td>Office Manager</td>
-                <td>London</td>
-                <td>30</td>
-                <td>$90,560</td>
-            </tr>
-            <tr>
-                <td>Haley Kennedy</td>
-                <td>Senior Marketing Designer</td>
-                <td>London</td>
-                <td>43</td>
-                <td>$313,500</td>
-            </tr>
-            <tr>
-                <td>Tatyana Fitzpatrick</td>
-                <td>Regional Director</td>
-                <td>London</td>
-                <td>19</td>
-                <td>$385,750</td>
-            </tr>
-            <tr>
-                <td>Michael Silva</td>
-                <td>Marketing Designer</td>
-                <td>London</td>
-                <td>66</td>
-                <td>$198,500</td>
-            </tr>
-            <tr>
-                <td>Bradley Greer</td>
-                <td>Software Engineer</td>
-                <td>London</td>
-                <td>41</td>
-                <td>$132,000</td>
-            </tr>
-            <tr>
-                <td>Angelica Ramos</td>
-                <td>Chief Executive Officer (CEO)</td>
-                <td>London</td>
-                <td>47</td>
-                <td>$1,200,000</td>
-            </tr>
-            <tr>
-                <td>Suki Burks</td>
-                <td>Developer</td>
-                <td>London</td>
-                <td>53</td>
-                <td>$114,500</td>
-            </tr>
-            <tr>
-                <td>Prescott Bartlett</td>
-                <td>Technical Author</td>
-                <td>London</td>
-                <td>27</td>
-                <td>$145,000</td>
-            </tr>
-            <tr>
-                <td>Timothy Mooney</td>
-                <td>Office Manager</td>
-                <td>London</td>
-                <td>37</td>
-                <td>$136,200</td>
-            </tr>
-            <tr>
-                <td>Bruno Nash</td>
-                <td>Software Engineer</td>
-                <td>London</td>
-                <td>38</td>
-                <td>$163,500</td>
-            </tr>
-            <tr>
-                <td>Hermione Butler</td>
-                <td>Regional Director</td>
-                <td>London</td>
-                <td>47</td>
-                <td>$356,250</td>
-            </tr>
-            <tr>
-                <td>Lael Greer</td>
-                <td>Systems Administrator</td>
-                <td>London</td>
-                <td>21</td>
-                <td>$103,500</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Car ID</th>
-                <th>Car MakeName</th>
-                <th>Car SeriesYear</th>
-                <th>Car EngineSize</th>
-                <th>Car SeatingCapacity</th>
-            </tr>
-        </tfoot>
-    </table>
+<table id="Data" class="display" style="width:100%">
+    <thead>
+    <th>Order_ID</th>
+    <th>Order_CreateDate</th>
+    <th>Order_PickupDate</th>
+    <th>Order_Pickup_Store</th>
+    <th>Pickup_Store_Name</th>
+    <th>Pickup_Store_Address</th>
+    <th>Pickup_Store_Phone</th>
+    <th>Pickup_Store_City</th>
+    <th>Pickup_Store_State_Name</th>
+    <th>Order_ReturnDate</th>
+    <th>Order_ReturnStore</th>
+    <th>Return_Store_Name</th>
+    <th>Return_Store_Address</th>
+    <th>Return_Store_Phone</th>
+    <th>Return_Store_City</th>
+    <th>Return_Store_State</th>
+    <th>Customer_ID</th>
+    <th>Customer_Name</th>
+    <th>Customer_Phone</th>
+    <th>Customer_Addresss</th>
+    <th>Customer_Brithday</th>
+    <th>Customer_Occupation</th>
+    <th>Customer_Gender</th>
+    <th>Car_ID</th>
+    <th>Car_MakeName</th>
+    <th>Car_Model</th>
+    <th>Car_Series</th>
+    <th>Car_SeriesYear</th>
+    <th>Car_PriceNew</th>
+    <th>Car_EngineSize</th>
+    <th>Car_FuelSystem</th>
+    <th>Car_TankCapacity</th>
+    <th>Car_Power</th>
+    <th>Car_SeatingCapacity</th>
+    <th>Car_StandardTransmission</th>
+    <th>Car_BodyType</th>
+    <th>Car_Drive</th>
+    <th>Car_Wheelbase</th>
+    </thead>
+    <tbody>
+        <!-- Fetch databases from MySQL -->
+        {% for item in items %}
+        <tr>
+            <td>{{ item.Order_ID}}</td>
+            <td>{{ item.Order_CreateDate}}</td>
+            <td>{{ item.Order_PickupDate}}</td>
+            <td>{{ item.Order_Pickup_Store}}</td>
+            <td>{{ item.Pickup_Store_Name}}</td>
+            <td>{{ item.Pickup_Store_Address}}</td>
+            <td>{{ item.Pickup_Store_Phone}}</td>
+            <td>{{ item.Pickup_Store_City}}</td>
+            <td>{{ item.Pickup_Store_State_Name}}</td>
+            <td>{{ item.Order_ReturnDate}}</td>
+            <td>{{ item.Order_ReturnStore}}</td>
+            <td>{{ item.Return_Store_Name}}</td>
+            <td>{{ item.Return_Store_Address}}</td>
+            <td>{{ item.Return_Store_Phone}}</td>
+            <td>{{ item.Return_Store_City}}</td>
+            <td>{{ item.Return_Store_State}}</td>
+            <td>{{ item.Customer_ID}}</td>
+            <td>{{ item.Customer_Name}}</td>
+            <td>{{ item.Customer_Phone}}</td>
+            <td>{{ item.Customer_Addresss}}</td>
+            <td>{{ item.Customer_Brithday}}</td>
+            <td>{{ item.Customer_Occupation}}</td>
+            <td>{{ item.Customer_Gender}}</td>
+            <td>{{ item.Car_ID}}</td>
+            <td>{{ item.MakeName}}</td>
+            <td>{{ item.Car_Model}}</td>
+            <td>{{ item.Car_Series}}</td>
+            <td>{{ item.Car_SeriesYear}}</td>
+            <td>{{ item.Car_PriceNew}}</td>
+            <td>{{ item.Car_EngineSize}}</td>
+            <td>{{ item.Car_FuelSystem}}</td>
+            <td>{{ item.Car_TankCapacity}}</td>
+            <td>{{ item.Power}}</td>
+            <td>{{ item.SeatingCapacity}}</td>
+            <td>{{ item.Car_StandardTransmission}}</td>
+            <td>{{ item.Car_BodyType}}</td>
+            <td>{{ item.Car_Drive}}</td>
+            <td>{{ item.Car_Wheelbase}}</td>
+        </tr>
+        {% endfor %}
 
 
+    </tbody>
 
+
+</table>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $('#Data').DataTable( {
+                    responsive: {
+                        details: {
+                            type: 'column',
+                            target: -1
+                        }
+                    },
+                    columnDefs: [ {
+                        className: 'control',
+                        orderable: false,
+                        targets:   -1
+                    } ]
+                } );
+            } );
+
+        </script>
+</body>
 </html>
