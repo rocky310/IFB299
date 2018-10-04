@@ -12,4 +12,7 @@ urlpatterns = [
     path('record', views.record, name='record'),
     path('history', views.history, name='history'),
     path('test', views.test, name='test'),
+    path('test2', views.test2, name='test2'),
+    path('delete/<id>', views.delete, name='delete'),
+    path('edit/<id>', views.edit, name='edit'),
 ]

@@ -17,6 +17,10 @@ class CarInfo(models.Model):
     Car_Series = models.TextField()
     Car_SeriesYear = models.TextField()
 
+    def __str__(self):
+        return self.Customer_ID
+
+
 class HistoryInfo(models.Model):
     Order_ID = models.TextField()
     Order_CreateDate = models.TextField()

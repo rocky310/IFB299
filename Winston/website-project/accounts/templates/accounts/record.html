@@ -11,8 +11,9 @@
   <title>Car Rent</title>
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+
 
   <header>
 
@@ -67,9 +68,22 @@
 
   </header>
 
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissable" role="alert">
+                    <button class="close" data-dismiss="alert">
+                        <small><sup>X</sup></small>
+                    </button>
+                    {{ message }}
+                </div>
+            {% endfor%}
+        {% endif %}
+     </div>
+
 <body>
 
-<table id="Data" class="display" style="width:100%">
+<table id="Data" class="display" style=" width:100%">
     <thead>
         <th>Customer ID</th>
         <th>Customer Name</th>
@@ -86,6 +100,8 @@
         <th>Car Model</th>
         <th>Car Series</th>
         <th>Car SeriesYear</th>
+        <th>Actions</th>
+
     </thead>
     <tbody>
         <!-- Fetch databases from MySQL -->
@@ -106,6 +122,15 @@
             <td>{{ item.Car_Model}}</td>
             <td>{{ item.Car_Series}}</td>
             <td>{{ item.Car_SeriesYear}}</td>
+            <td noWrap>
+
+                <a class="btn btn-outline-primary " href="{% url 'edit' item.id %}"  role="button">Edit</a>
+
+                <a class="btn btn-outline-secondary " href="{% url 'delete' item.id %}" role="button">Delete</a>
+
+
+            </td>
+
         </tr>
         {% endfor %}
 
@@ -115,27 +140,16 @@
 
 </table>
 
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
         <script type="text/javascript">
-
             $(document).ready(function() {
-                $('#Data').DataTable( {
-                    responsive: {
-                        details: {
-                            type: 'column',
-                            target: -1
-                        }
-                    },
-                    columnDefs: [ {
-                        className: 'control',
-                        orderable: false,
-                        targets:   -1
-                    } ]
-                } );
+                $('#Data').DataTable();
             } );
-
         </script>
 </body>
 </html>
