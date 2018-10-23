@@ -61,11 +61,108 @@ class HistoryInfo(models.Model):
     Car_Drive = models.TextField()
     Car_Wheelbase = models.TextField()
 
+class Viewcars(models.Model):
+    Car_MakeName = models.TextField()
+    Car_Series = models.TextField()
+    Car_SeriesYear = models.TextField()
+    Car_EngineSize = models.TextField()
+    Car_FuelSystem = models.TextField()
+    Car_TankCapacity = models.TextField()
+    Car_Power = models.TextField()
+    Car_SeatingCapacity = models.TextField()
+    Car_BodyType = models.TextField()
+    Car_Drive = models.TextField()
+    image = models.ImageField(upload_to='images/')
 
 
+    def __str__(self):
+        return self.Car_MakeName
 
 
+class Audi(models.Model):
+    Car_MakeName = models.TextField()
+    Car_Series = models.TextField()
+    Car_SeriesYear = models.TextField()
+    Car_EngineSize = models.TextField()
+    Car_FuelSystem = models.TextField()
+    Car_TankCapacity = models.TextField()
+    Car_Power = models.TextField()
+    Car_SeatingCapacity = models.TextField()
+    Car_BodyType = models.TextField()
+    Car_Drive = models.TextField()
+    image = models.ImageField(upload_to='images/')
 
+
+    def __str__(self):
+        return self.Car_MakeName
+
+class Hyundai(models.Model):
+    Car_MakeName = models.TextField()
+    Car_Series = models.TextField()
+    Car_SeriesYear = models.TextField()
+    Car_EngineSize = models.TextField()
+    Car_FuelSystem = models.TextField()
+    Car_TankCapacity = models.TextField()
+    Car_Power = models.TextField()
+    Car_SeatingCapacity = models.TextField()
+    Car_BodyType = models.TextField()
+    Car_Drive = models.TextField()
+    image = models.ImageField(upload_to='images/')
+
+
+    def __str__(self):
+        return self.Car_MakeName
+
+class Toyota(models.Model):
+    Car_MakeName = models.TextField()
+    Car_Series = models.TextField()
+    Car_SeriesYear = models.TextField()
+    Car_EngineSize = models.TextField()
+    Car_FuelSystem = models.TextField()
+    Car_TankCapacity = models.TextField()
+    Car_Power = models.TextField()
+    Car_SeatingCapacity = models.TextField()
+    Car_BodyType = models.TextField()
+    Car_Drive = models.TextField()
+    image = models.ImageField(upload_to='images/')
+
+
+    def __str__(self):
+        return self.Car_MakeName
+
+class Mitsubishi(models.Model):
+    Car_MakeName = models.TextField()
+    Car_Series = models.TextField()
+    Car_SeriesYear = models.TextField()
+    Car_EngineSize = models.TextField()
+    Car_FuelSystem = models.TextField()
+    Car_TankCapacity = models.TextField()
+    Car_Power = models.TextField()
+    Car_SeatingCapacity = models.TextField()
+    Car_BodyType = models.TextField()
+    Car_Drive = models.TextField()
+    image = models.ImageField(upload_to='images/')
+
+
+    def __str__(self):
+        return self.Car_MakeName
+
+class Kia(models.Model):
+    Car_MakeName = models.TextField()
+    Car_Series = models.TextField()
+    Car_SeriesYear = models.TextField()
+    Car_EngineSize = models.TextField()
+    Car_FuelSystem = models.TextField()
+    Car_TankCapacity = models.TextField()
+    Car_Power = models.TextField()
+    Car_SeatingCapacity = models.TextField()
+    Car_BodyType = models.TextField()
+    Car_Drive = models.TextField()
+    image = models.ImageField(upload_to='images/')
+
+
+    def __str__(self):
+        return self.Car_MakeName
 
 
 

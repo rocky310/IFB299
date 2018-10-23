@@ -30,3 +30,5 @@ def create(request):
     else:
         return render(request, 'products/create.html')
 
+
+

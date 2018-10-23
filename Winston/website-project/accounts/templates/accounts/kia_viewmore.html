@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>Car Rent</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+</head>
+
+<body background="{% static 'timg.jpg' %}">
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="{% static 'logo.png' %}" height=40 width=40 class="d-inline-block alighn-top" />
+      Car Rent
+
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+
+
+              <a class="nav-item nav-link" href="{% url 'view_kia' %}">Back</a>
+
+
+
+
+
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+
+        <h1>Car Information</h1>
+
+  <br />
+
+<div class="container">
+
+
+
+
+        {% if viewmore %}
+
+        <form method="POST"  enctype="multipart/form-data">
+        {% csrf_token %}
+
+         <img src="{{ viewmore.image.url }}" height=275 width=600>
+        <br />
+        <br />
+        <br />
+
+        Car MakeName:
+         <h4><a class="TextField" >{{ viewmore.Car_MakeName }}</a></h4>
+        <br />
+        Car Series:
+         <h4><a class="TextField" >{{ viewmore.Car_Series }}</a></h4>
+        <br />
+        Car SeriesYear:
+        <h4> <a class="TextField" >{{ viewmore.Car_SeriesYear }}</a></h4>
+        <br />
+        Car EngineSize:
+         <h4><a class="TextField" >{{ viewmore.Car_EngineSize }}</a></h4>
+        <br />
+        Car FuelSystem:
+        <h4> <a class="TextField" >{{ viewmore.Car_FuelSystem }}</a></h4>
+        <br />
+        Car TankCapacity:
+        <h4> <a class="TextField" >{{ viewmore.Car_TankCapacity }}</a></h4>
+        <br />
+        Car Power:
+        <h4> <a class="TextField" >{{ viewmore.Car_Power }}</a></h4>
+        <br />
+        Car SeatingCapacity:
+        <h4> <a class="TextField" >{{ viewmore.Car_SeatingCapacity }}</a></h4>
+        <br />
+        Car BodyType:
+        <h4> <a class="TextField" >{{ viewmore.Car_BodyType }}</a></h4>
+        <br />
+        Car Drive:
+        <h4> <a class="TextField" >{{ viewmore.Car_Drive }}</a></h4>
+        <br />
+
+        <br />
+
+
+
+
+      {% endif %}
+        <a class="btn btn-info my-10 my-sm-2 col-xs-6 col-md-3 btn-lg"
+           href="mailto:?subject=Welcome%20To%20Car%20Rent%20
+
+
+           &body= Save the car information that you like" role="button">Save for later</a>
+<br />
+
+        <a class="btn btn-success my-10 my-sm-2 col-xs-6 col-md-3 btn-lg" href="{% url 'view_kia' %}" role="button">Back</a>
+</div>
+
+
+      <br />
+      <br />
+        <br />
+  <footer class="text-muted">
+    <div class="container text-center">
+      <p><font size="2" color="#696969">Copyright © 2018 CarRent Limited trading as CarRent.com. All rights reserved</font></p>
+      </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

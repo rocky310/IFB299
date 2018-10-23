@@ -79,7 +79,7 @@
                 </div>
             {% endfor%}
         {% endif %}
-     </div>
+    </div>
 
 <body>
 
@@ -123,6 +123,7 @@
             <td>{{ item.Car_Series}}</td>
             <td>{{ item.Car_SeriesYear}}</td>
             <td noWrap>
+                <a class="btn btn-outline-info " href="{% url 'loadnew' %}"  role="button">Load New</a>
 
                 <a class="btn btn-outline-primary " href="{% url 'edit' item.id %}"  role="button">Edit</a>
 
