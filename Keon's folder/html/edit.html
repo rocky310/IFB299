@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>Car Rent</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="{% static 'logo.png' %}" height=40 width=40 class="d-inline-block alighn-top" />
+      Car Rent Management System
+
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+
+              <a class="nav-item nav-link" href="{% url 'record' %}">Back</a>
+
+          {% else %}
+          <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+          <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+
+          {% endif %}
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+
+        <h2>Edit Customer Information</h2>
+
+        {% if item %}
+
+        <form method="POST"  enctype="multipart/form-data">
+        {% csrf_token %}
+        Customer ID:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Customer_ID }}"
+                value="{{ item.Customer_ID }}" name="Customer_ID">
+        <br />
+        Customer Name:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Customer_Name }}"
+                value="{{ item.Customer_Name }}" name="Customer_Name">
+        <br />
+        Order ID:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Order_ID }}"
+                value="{{ item.Order_ID }}" name="Order_ID">
+        <br />
+        Order CreateDate:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Order_CreateDate }}"
+                value="{{ item.Order_CreateDate }}" name="Order_CreateDate">
+        <br />
+        Order PickupDate:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Order_PickupDate }}"
+                value="{{ item.Order_PickupDate }}" name="Order_PickupDate">
+        <br />
+        Order Pickup Store:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Order_Pickup_Store }}"
+                value="{{ item.Order_Pickup_Store }}" name="Order_Pickup_Store">
+        <br />
+        Pickup Store Name:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Pickup_Store_Name }}"
+                value="{{ item.Pickup_Store_Name }}" name="Pickup_Store_Name">
+        <br />
+        Order ReturnDate:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Order_ReturnDate }}"
+                value="{{ item.Order_ReturnDate }}" name="Order_ReturnDate">
+        <br />
+        Order ReturnStore:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Order_ReturnStore }}"
+                value="{{ item.Order_ReturnStore }}" name="Order_ReturnStore">
+        <br />
+        Return Store Name:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Return_Store_Name }}"
+                value="{{ item.Return_Store_Name }}" name="Return_Store_Name">
+        <br />
+        Car ID:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Car_ID }}"
+                value="{{ item.Car_ID }}" name="Car_ID">
+        <br />
+        Car MakeName:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Car_MakeName }}"
+                value="{{ item.Car_MakeName }}" name="Car_MakeName">
+        <br />
+        Car Model:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Car_Model }}"
+                value="{{ item.Car_Model }}" name="Car_Model">
+        <br />
+        Car Series:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Car_Series }}"
+                value="{{ item.Car_Series }}" name="Car_Series">
+        <br />
+        Car SeriesYear:
+        <br />
+         <input class="form-control mr-sm-2" type="search" placeholder="{{ item.Car_SeriesYear }}"
+                value="{{ item.Car_SeriesYear }}" name="Car_SeriesYear">
+        <br />
+
+
+
+
+        <br />
+        <button class="btn btn-info my-10 my-sm-2 col-xs-6 col-md-3 btn-lg" type="submit">Save Information</button>
+
+        </form>
+
+        <a class="btn btn-warning my-10 my-sm-2 col-xs-6 col-md-3 btn-lg" href="{% url 'record' %}" role="button">Cancel</a>
+
+      {% endif %}
+      <br />
+      <br />
+        <br />
+  <footer class="text-muted">
+    <div class="container text-center">
+      <p>Have a happy {% now "Y" %}</p>
+      </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
