@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>Car Rent</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="{% static 'logo.png' %}" height=40 width=40 class="d-inline-block alighn-top" />
+      Car Rent Management System
+
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            {% if user.is_authenticated %}
+
+
+
+            <a class="nav-link" href="{% url 'browser' %}">Browser</a>
+            <a class="nav-link" href="{% url 'record' %}">Record</a>
+            <a class="nav-link" href="{% url 'history' %}">History</a>
+            <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
+            <form id="logout" method="POST" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <input type="hidden" />
+            </form>
+
+
+            </ul>
+
+
+            {% else %}
+
+            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+
+
+
+
+            {% endif %}
+
+
+
+      </div>
+    </nav>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  </header>
+
+<body>
+
+<table id="Data" class="display" style="width:100%">
+    <thead>
+    <th>Order_ID</th>
+    <th>Order_CreateDate</th>
+    <th>Order_PickupDate</th>
+    <th>Order_Pickup_Store</th>
+    <th>Pickup_Store_Name</th>
+    <th>Pickup_Store_Address</th>
+    <th>Pickup_Store_Phone</th>
+    <th>Pickup_Store_City</th>
+    <th>Pickup_Store_State_Name</th>
+    <th>Order_ReturnDate</th>
+    <th>Order_ReturnStore</th>
+    <th>Return_Store_Name</th>
+    <th>Return_Store_Address</th>
+    <th>Return_Store_Phone</th>
+    <th>Return_Store_City</th>
+    <th>Return_Store_State</th>
+    <th>Customer_ID</th>
+    <th>Customer_Name</th>
+    <th>Customer_Phone</th>
+    <th>Customer_Addresss</th>
+    <th>Customer_Brithday</th>
+    <th>Customer_Occupation</th>
+    <th>Customer_Gender</th>
+    <th>Car_ID</th>
+    <th>Car_MakeName</th>
+    <th>Car_Model</th>
+    <th>Car_Series</th>
+    <th>Car_SeriesYear</th>
+    <th>Car_PriceNew</th>
+    <th>Car_EngineSize</th>
+    <th>Car_FuelSystem</th>
+    <th>Car_TankCapacity</th>
+    <th>Car_Power</th>
+    <th>Car_SeatingCapacity</th>
+    <th>Car_StandardTransmission</th>
+    <th>Car_BodyType</th>
+    <th>Car_Drive</th>
+    <th>Car_Wheelbase</th>
+    </thead>
+    <tbody>
+        <!-- Fetch databases from MySQL -->
+        {% for item in items %}
+        <tr>
+            <td>{{ item.Order_ID}}</td>
+            <td>{{ item.Order_CreateDate}}</td>
+            <td>{{ item.Order_PickupDate}}</td>
+            <td>{{ item.Order_Pickup_Store}}</td>
+            <td>{{ item.Pickup_Store_Name}}</td>
+            <td>{{ item.Pickup_Store_Address}}</td>
+            <td>{{ item.Pickup_Store_Phone}}</td>
+            <td>{{ item.Pickup_Store_City}}</td>
+            <td>{{ item.Pickup_Store_State_Name}}</td>
+            <td>{{ item.Order_ReturnDate}}</td>
+            <td>{{ item.Order_ReturnStore}}</td>
+            <td>{{ item.Return_Store_Name}}</td>
+            <td>{{ item.Return_Store_Address}}</td>
+            <td>{{ item.Return_Store_Phone}}</td>
+            <td>{{ item.Return_Store_City}}</td>
+            <td>{{ item.Return_Store_State}}</td>
+            <td>{{ item.Customer_ID}}</td>
+            <td>{{ item.Customer_Name}}</td>
+            <td>{{ item.Customer_Phone}}</td>
+            <td>{{ item.Customer_Addresss}}</td>
+            <td>{{ item.Customer_Brithday}}</td>
+            <td>{{ item.Customer_Occupation}}</td>
+            <td>{{ item.Customer_Gender}}</td>
+            <td>{{ item.Car_ID}}</td>
+            <td>{{ item.MakeName}}</td>
+            <td>{{ item.Car_Model}}</td>
+            <td>{{ item.Car_Series}}</td>
+            <td>{{ item.Car_SeriesYear}}</td>
+            <td>{{ item.Car_PriceNew}}</td>
+            <td>{{ item.Car_EngineSize}}</td>
+            <td>{{ item.Car_FuelSystem}}</td>
+            <td>{{ item.Car_TankCapacity}}</td>
+            <td>{{ item.Power}}</td>
+            <td>{{ item.SeatingCapacity}}</td>
+            <td>{{ item.Car_StandardTransmission}}</td>
+            <td>{{ item.Car_BodyType}}</td>
+            <td>{{ item.Car_Drive}}</td>
+            <td>{{ item.Car_Wheelbase}}</td>
+        </tr>
+        {% endfor %}
+
+
+    </tbody>
+
+
+</table>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $('#Data').DataTable( {
+                    responsive: {
+                        details: {
+                            type: 'column',
+                            target: -1
+                        }
+                    },
+                    columnDefs: [ {
+                        className: 'control',
+                        orderable: false,
+                        targets:   -1
+                    } ]
+                } );
+            } );
+
+        </script>
+</body>
+</html>
