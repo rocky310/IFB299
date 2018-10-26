@@ -1,0 +1,2 @@
+INSERT INTO `accounts_hyundai` VALUES (1, 'Hyundai i10', 'SERIES II S 4x4', '2003', '2.5L', 'DIESEL TURBO F/INJ', '88.5L', '83Kw', '4 Seats', '4D WAGON', 'Automatic', 'images/Hyundai-i10.png');
+INSERT INTO `accounts_hyundai` VALUES (2, 'Hyundai Accent', 'SERIES II SE 4x4', '2004', '4.0L', 'MULTI POINT F/INJ', '93L', '136Kw', '5 Seats', '4D WAGON', 'Automatic/Standard', 'images/hyundai-accent.png');
